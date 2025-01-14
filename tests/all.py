@@ -23,5 +23,8 @@ class TestWordsByFrequency(unittest.TestCase):
     def test_empty_sentence(self):
         self.assertEqual(words_by_frequency("", 20), [])
 
+    def test_negative_n(self):
+        self.assertEqual(words_by_frequency("bar baz foo foo zblah zblah zblah baz toto bar", -1), [])
+
 if __name__ == '__main__':
     unittest.main()

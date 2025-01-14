@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
-def words_by_frequency(sentence: str, n: int) -> dict[str, int]:
+def words_by_frequency(sentence: str, n: int) -> list[(str, int)]:
     """Counts the frequency of words in a sentence, returning n elements by the most
     frequent words, ordered alphabetically. This algorithm is case insensitive.
 
@@ -14,10 +14,13 @@ def words_by_frequency(sentence: str, n: int) -> dict[str, int]:
 
     Returns
     -------
-    list : dict[str, int]
+    list : list[(str, int)]
         A sorted list of words and their number of occurrence. The returned
         list is of size `n`.
     """
+
+    if n < 0:
+        return []
 
     # Make the algorithm case insensitive.
     words = [word.lower() for word in sentence.split()]
