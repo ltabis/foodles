@@ -16,7 +16,7 @@ def words_by_frequency(sentence: str, n: int) -> list[(str, int)]:
     -------
     list : list[(str, int)]
         A sorted list of words and their number of occurrence. The returned
-        list is of size `n`.
+        list is of size `n`. If n is negative, this function returns an empty string.
     """
 
     if n < 0:
